@@ -11,7 +11,7 @@ class App extends Component {
 
   handleclick=()=>{
     //acceder a la methode addfocus creer dans myRef
-    this.refComp.current.addFocus();
+    this.refComp.current.focus();
   }
 
   render() {
