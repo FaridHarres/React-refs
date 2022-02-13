@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import react, { Component } from "react";
 import './App.css';
+import MyRef from './MyRef';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.refComp= react.createRef();
+  }
+
+  handleclick=()=>{
+    //acceder a la methode addfocus creer dans myRef
+    this.refComp.current.addFocus();
+  }
+
+  render() {
+
+
+    return (
+      <div className="App">
+        <MyRef ref={this.refComp}/>
+        <button onClick={this.handleclick}>Valider</button>
+
+      </div>
+    );
+  }
 }
 
 export default App;
